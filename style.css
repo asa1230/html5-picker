@@ -1,0 +1,55 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+#container {
+    position:absolute;
+    top:50px;
+    left:0px;
+    right:170px;
+    bottom:0px;
+    overflow:hidden;
+    margin:10px;
+    padding:5px;
+    border:5px dashed gray;
+}
+
+#palette {
+    position:absolute;
+    top:50px;
+    width:150px;
+    right:0px;
+    bottom:0px;
+    overflow:hidden;
+    margin:10px;
+    margin-left:0px;
+    padding:5px;
+    border:1px solid gray;
+}
+
+.current {
+    height:30px;
+    line-height: 30px
+    border:1px solid gray;
+}
+
+.current .color {
+    float:left;
+    width:25px;
+    height:18px;
+    border:1px solid gray;
+}
+
+.current .value {
+    float:left;
+    width:25px;
+    height:20px;
+    padding-left: 5px;
+    line-height: 20px;
+}
+
+canvas#target {
+    background:gray;
+}
