@@ -2,55 +2,30 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="script.js"></script>
     <script>
-$(document).ready(function() {
-    $("canvas#target").attr({width: $("#container").width()});
-    $("canvas#target").attr({height: $("#container").height()});
-
-    $(window).resize(function() {
-        $("canvas#target").attr({width: $("#container").width()});
-        $("canvas#target").attr({height: $("#container").height()});
-    });
-    
-    $("canvas#target").mousemove(function(evt) {
-        var mouseX, mouseY;
-
-        if(evt.offsetX) {
-            mouseX = evt.offsetX;
-            mouseY = evt.offsetY;
-        }
-        else if(e.layerX) {
-            mouseX = evt.layerX;
-            mouseY = evt.layerY;
-        }
-        var color = ctx.getImageData(mouseX, mouseY, 1, 1).data;
-        var hexColor = rgbToHex(color[0], color[1], color[2]);
-        $("#current #color").css({background:hexColor});
-        $("#current #value").html(hexColor);
-    });
-});
-
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
+        $(document).ready(function() {
+            var cpicker = new picker.bind($("canvas#target")[0]);
+        });
     </script>
 </head>
-<body>
+<body oncontextmenu="return false;">
+    <div id="header">
+        <img src="code-club-logo1_2.png" alt="logo" />
+        <h1>HTML5-Picker</h1>
+    </div>
     <div id="container">
+        <div class="magnify"></div>
         <canvas id="target"></canvas>    
     </div>
     <div id="palette">
-        <div id="current" class="current">
+        <div id="current" class="coloritem">
             <div id="color" class="color"></div>
             <div id="value" class="value">#ffffff</div>
         </div>
-        <hr/>
+        <div id="bar"></div>
+        <div id="colorList"></div>
+        <div id="footerBtn">REMOVE ALL</div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

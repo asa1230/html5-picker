@@ -1,7 +1,24 @@
 html, body {
+    background: #282828;
     width: 100%;
     height: 100%;
     margin: 0px;
+}
+
+#header {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#header img {
+    float: left;
+}
+
+#header h1 {
+    color: gray;
+    margin-top: 4px;
+    margin-left: 5px;
+    float: left;
 }
 
 #container {
@@ -17,6 +34,7 @@ html, body {
 }
 
 #palette {
+    background: #535353;
     position:absolute;
     top:50px;
     width:150px;
@@ -26,30 +44,73 @@ html, body {
     margin:10px;
     margin-left:0px;
     padding:5px;
-    border:1px solid gray;
+    border:1px solid #282828;
 }
 
-.current {
-    height:30px;
-    line-height: 30px
-    border:1px solid gray;
+#bar {
+    position: absolute;
+    top:38px;
+    left:5px;
+    right:5px;
+    height:4px;
+    background:url(bl.png) repeat;
 }
 
-.current .color {
+.coloritem {
+    height:25px;
+    line-height:25px;
+}
+
+.coloritem .color {
     float:left;
     width:25px;
     height:18px;
-    border:1px solid gray;
+    border:1px solid #e1e1e1;
 }
 
-.current .value {
+.coloritem .value {
     float:left;
     width:25px;
-    height:20px;
+    height:25px;
     padding-left: 5px;
-    line-height: 20px;
+    line-height:25px;
+    color: #e1e1e1;
+}
+
+.coloritem .remove {
+    float: right;
+    width: 20px;
+    height:25px;
+    line-height:25px;
+    background:url(remove.png) no-repeat center center;
+    cursor: pointer;
+}
+
+#footerBtn {
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    line-height: 40px;
+    margin:5px;
+    text-align:center;
+    font-weight: 900;
+    color: white;
+    background: gray;
+    cursor: pointer;
 }
 
 canvas#target {
-    background:gray;
+    cursor: crosshair;
+    background:#bbb;
+}
+
+.magnify {
+    width: 150px;
+    height:150px;
+    position:absolute;
+    border-radius:100%;
+    box-shadow: 0 0 0 7px rgba(255,255,255,0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+    display:none;
 }
