@@ -78,7 +78,7 @@
                 return false;
             });
             
-            $CANVAS.bind("dragover", function (evt) {
+            $CANVAS.bind("drop", function (evt) {
                 picker.util.stopEvent(evt);
                 $CONTAINER.css({borderColor: "gray"});
                 
@@ -93,7 +93,7 @@
                 for (var i = 0; i < files.length; i++) {
                     if (files[i].type.match('image.*')) {
                         reader.readAsDataURL(files[i]);
-                        berak;
+                        break;
                     }
                 }
                 
